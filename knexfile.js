@@ -1,32 +1,40 @@
+require('dotenv').config();
+//console.dir(process.env);
+
 module.exports = {
-  test: {
-    client: 'pg',
-    connection: 'postgres://localhost/test_db',
-    migrations: {
-      directory: __dirname + '/db/migrations'
-    },
-    seeds: {
-      directory: __dirname + '/db/seeds/test'
-    }
-  },
   development: {
     client: 'pg',
-    connection: 'postgres://postgres:@localhost:32768/development_db',
+    connection: process.env.DB_URL,
     migrations: {
+      tableName: 'migrations',
       directory: __dirname + '/db/migrations'
     },
     seeds: {
       directory: __dirname + '/db/seeds/development'
-    }
+    },
   },
+
+  testing: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      tableName: 'migrations',
+      directory: __dirname + '/db/migrations'
+    },
+    seeds: {
+      directory: __dirname + '/db/seeds/development'
+    },
+  },
+
   production: {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     migrations: {
+      tableName: 'migrations',
       directory: __dirname + '/db/migrations'
     },
     seeds: {
-      directory: __dirname + '/db/seeds/production'
-    }
-  }
-}
+      directory: __dirname + '/db/seeds/development'
+    },
+  },
+};
