@@ -7,10 +7,10 @@ module.exports = {
     connection: process.env.DB_URL,
     migrations: {
       tableName: 'migrations',
-      directory: __dirname + '/db/migrations'
+      directory: __dirname + '/src/db/migrations'
     },
     seeds: {
-      directory: __dirname + '/db/seeds/development'
+      directory: __dirname + '/src/db/seeds/development'
     },
   },
 
@@ -19,10 +19,10 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     migrations: {
       tableName: 'migrations',
-      directory: __dirname + '/db/migrations'
+      directory: __dirname + '/src/db/migrations'
     },
     seeds: {
-      directory: __dirname + '/db/seeds/development'
+      directory: __dirname + '/src/db/seeds/development'
     },
   },
 
@@ -31,10 +31,10 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     migrations: {
       tableName: 'migrations',
-      directory: __dirname + '/db/migrations'
+      directory: __dirname + '/src/db/migrations'
     },
     seeds: {
-      directory: __dirname + '/db/seeds/development'
+      directory: __dirname + '/src/db/seeds/development'
     },
   },
 };
